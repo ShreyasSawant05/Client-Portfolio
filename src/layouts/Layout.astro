@@ -12,7 +12,7 @@
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<slot />
@@ -34,8 +34,11 @@
 		--text-muted: #7A6470;
 		--border-color: #DDD2C2;
 		
-		--font-serif: 'Playfair Display', serif;
-		--font-sans: 'Inter', sans-serif;
+		--font-serif: 'Almendra', serif;
+		--font-heading: 'Almendra', serif;
+		--font-subheading: 'Cormorant Infant', serif;
+		--font-body: 'Maitree', serif;
+		--font-sans: 'Maitree', serif;
 
 		/* Section sizing */
 		--section-width: 1920px;
@@ -57,16 +60,23 @@
 		min-height: 100%;
 		background-color: var(--bg-warm-ivory);
 		color: var(--text-deep-plum);
-		font-family: var(--font-sans);
+		font-family: var(--font-body);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		line-height: 1.6;
 		overflow-x: hidden;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
-		font-family: var(--font-serif);
-		font-weight: 500;
+	h1, h2 {
+		font-family: var(--font-heading);
+		font-weight: 700;
+		color: var(--text-deep-plum);
+		line-height: 1.2;
+	}
+
+	h3, h4, h5, h6 {
+		font-family: var(--font-subheading);
+		font-weight: 600;
 		color: var(--text-deep-plum);
 		line-height: 1.2;
 	}
@@ -81,7 +91,7 @@
 	}
 
 	button {
-		font-family: var(--font-sans);
+		font-family: var(--font-body);
 		cursor: pointer;
 		border: none;
 		outline: none;
@@ -125,7 +135,7 @@
 		transition: all 0.3s ease;
 		cursor: pointer;
 		border: none;
-		font-family: var(--font-sans);
+		font-family: var(--font-body);
 	}
 
 	.btn:hover {
@@ -161,23 +171,24 @@
 
 	/* Section title */
 	.section-title {
-		font-family: var(--font-serif);
+		font-family: var(--font-heading);
 		font-size: 3.24rem;
 		margin-bottom: 28px;
 		color: var(--text-deep-plum);
-		font-weight: 400;
+		font-weight: 700;
 		line-height: 1.12;
 	}
 
 	/* Italic ampersand accent */
 	.italic-accent {
 		font-style: italic;
-		font-family: var(--font-serif);
+		font-family: var(--font-heading);
 		color: var(--accent-terracotta);
 	}
 
 	/* Body text */
 	.body-text {
+		font-family: var(--font-body);
 		margin-bottom: 22px;
 		font-size: 1.05rem;
 		color: var(--text-muted);
