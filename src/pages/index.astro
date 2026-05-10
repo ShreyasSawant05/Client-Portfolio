@@ -1,11 +1,545 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/sections.css';
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Navbar -->
+	<nav class="navbar" id="navbar">
+		<div class="nav-container container">
+			<div class="logo">
+				<span class="logo-badge">R</span>
+				<span class="logo-text">Riya Mishra</span>
+			</div>
+			<ul class="nav-links">
+				<li><a href="#about">About</a></li>
+				<li><a href="#projects">Work</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+				<span></span><span></span><span></span>
+			</button>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section class="section-frame hero-frame">
+		<div class="container hero">
+			<div class="hero-content" data-animate="left" style="text-align: left;">
+				<h1 class="hero-title">Riya<br/>Mishra</h1>
+				<div class="hero-academic" style="margin-bottom: 35px; border-left: 3px solid var(--accent-mustard); padding-left: 18px;">
+					<h3 style="font-size: 1.1rem; color: var(--text-deep-plum); font-weight: 600; margin-bottom: 6px; letter-spacing: 0.5px;">Bachelor's of Arts in Multimedia & Mass Communication (BAMMC)</h3>
+					<p style="color: var(--text-muted); font-size: 0.95rem;">SVKM’s Usha Pravin Gandhi College of Arts, Commerce and Science</p>
+				</div>
+				<div class="hero-actions" style="justify-content: flex-start;">
+					<a href="#projects" class="btn btn-primary">Explore the work &darr;</a>
+					<a href="#contact" class="btn btn-outline">Say Hello!</a>
+				</div>
+			</div>
+			<div class="hero-visual" data-animate="right" data-delay="2">
+				<div class="visual-wrapper">
+					<div class="visual-bg-offset"></div>
+					<div class="hero-image-container">
+						<img src="/hero_riya.jpg" alt="Riya Mishra" style="width: 100%; height: 100%; object-fit: cover; object-position: 40% 25%; border-radius: 20px;" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Marquee Strip -->
+	<div class="marquee-strip">
+		<div class="marquee-track">
+			<span>&plus; ILLUSTRATION &plus; VISUAL STORYTELLING &plus; MOTION &plus; BRANDING &plus; GRAPHIC DESIGN &plus; UI DESIGN &plus; SOCIAL MEDIA &plus; ILLUSTRATION &plus; VISUAL STORYTELLING &plus; MOTION &plus; BRANDING &plus; GRAPHIC DESIGN &plus; UI DESIGN &plus; SOCIAL MEDIA </span>
+			<span>&plus; ILLUSTRATION &plus; VISUAL STORYTELLING &plus; MOTION &plus; BRANDING &plus; GRAPHIC DESIGN &plus; UI DESIGN &plus; SOCIAL MEDIA &plus; ILLUSTRATION &plus; VISUAL STORYTELLING &plus; MOTION &plus; BRANDING &plus; GRAPHIC DESIGN &plus; UI DESIGN &plus; SOCIAL MEDIA </span>
+		</div>
+	</div>
+
+	<!-- About Section -->
+	<section id="about" class="section-frame about-frame">
+		<div class="container about-grid">
+			<div class="about-visual" data-animate="left">
+				<div class="visual-wrapper">
+					<div class="visual-bg-offset"></div>
+					<div class="about-image-container">
+						<img src="/riya_mishra_coat.png" alt="Riya Mishra Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" />
+					</div>
+				</div>
+			</div>
+			<div class="about-content" data-animate="right" data-delay="1">
+				<span class="section-label">ABOUT</span>
+				<h2 class="section-title" style="font-size: 2.2rem; line-height: 1.3; margin-bottom: 24px;">A curious mind shaping ideas into visuals.</h2>
+				<p class="body-text">I’m Riya Mishra, deeply interested in marketing, advertising, multimedia, and design, with a growing passion for UI and visual storytelling.</p>
+				<p class="body-text">Through my academic projects and personal explorations, I’ve worked on social media campaigns, graphic design, video editing, and UI—gaining a deeper understanding of how visual language communicates meaning.</p>
+				<div class="about-info-list" style="margin-top: 36px; display: flex; flex-direction: column; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 30px;">
+					<!-- Location -->
+					<div style="display: flex; align-items: center; gap: 14px; color: var(--text-deep-plum);">
+						<div style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-sand); display: flex; align-items: center; justify-content: center;">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+						</div>
+						<div>
+							<span class="info-label" style="margin-bottom: 2px;">BASED IN</span>
+							<span style="font-family: var(--font-serif); font-style: italic; font-size: 1.15rem;">Mumbai, India</span>
+						</div>
+					</div>
+					<!-- Education -->
+					<div style="display: flex; align-items: center; gap: 14px; color: var(--text-deep-plum);">
+						<div style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-sand); display: flex; align-items: center; justify-content: center;">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+						</div>
+						<div>
+							<span class="info-label" style="margin-bottom: 2px;">STUDYING</span>
+							<span style="font-family: var(--font-serif); font-style: italic; font-size: 1.15rem;">BAMMC Undergraduate</span>
+						</div>
+					</div>
+					<!-- Focus Badges -->
+					<div style="display: flex; align-items: flex-start; gap: 14px; color: var(--text-deep-plum);">
+						<div style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-sand); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+						</div>
+						<div>
+							<span class="info-label" style="margin-bottom: 2px;">FOCUS</span>
+							<div style="display: flex; flex-wrap: wrap; column-gap: 8px; row-gap: 4px; align-items: center; font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-deep-plum); font-style: italic;">
+								<span>Social Media <span style="color: var(--accent-mustard); margin-left: 6px; font-style: normal; font-weight: 500;">|</span></span>
+								<span>Design <span style="color: var(--accent-mustard); margin-left: 6px; font-style: normal; font-weight: 500;">|</span></span>
+								<span>UI <span style="color: var(--accent-mustard); margin-left: 6px; font-style: normal; font-weight: 500;">|</span></span>
+								<span>Marketing</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Gallery Strip -->
+	<div class="gallery-strip-section">
+		<div class="gallery-strip">
+			<div class="gallery-track">
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<!-- Duplicated for seamless loop -->
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+				<div class="gallery-item"><div class="image-placeholder"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Projects Section -->
+	<section id="projects" class="section-frame projects-frame">
+		<div class="container projects-section">
+			<div class="section-header" data-animate>
+				<div>
+					<h2 class="section-title">Recent projects.</h2>
+				</div>
+				<a href="#" class="view-all">View all projects &rarr;</a>
+			</div>
+			<div class="work-categories-list">
+				<!-- 1. UI/UX Design -->
+				<a href="/ui-ux-design" class="work-category-card" data-animate data-delay="1">
+					<div class="work-category-image">
+						<div class="image-placeholder"></div>
+					</div>
+					<div class="work-category-content">
+						<h3 class="work-category-title">UI/UX Design</h3>
+						<p class="work-category-desc">Crafting intuitive and engaging user experiences.</p>
+						<span class="work-category-arrow">Explore Projects &rarr;</span>
+					</div>
+				</a>
+				<!-- 2. Photoshop -->
+				<a href="/photoshop" class="work-category-card reverse" data-animate data-delay="1">
+					<div class="work-category-image">
+						<div class="image-placeholder"></div>
+					</div>
+					<div class="work-category-content">
+						<h3 class="work-category-title">Photoshop</h3>
+						<p class="work-category-desc">Advanced photo manipulation and digital art.</p>
+						<span class="work-category-arrow">Explore Projects &rarr;</span>
+					</div>
+				</a>
+				<!-- 3. Illustration -->
+				<a href="/illustration" class="work-category-card" data-animate data-delay="1">
+					<div class="work-category-image">
+						<div class="image-placeholder"></div>
+					</div>
+					<div class="work-category-content">
+						<h3 class="work-category-title">Illustration</h3>
+						<p class="work-category-desc">Bringing ideas to life through expressive visuals.</p>
+						<span class="work-category-arrow">Explore Projects &rarr;</span>
+					</div>
+				</a>
+				<!-- 4. Visual Storytelling -->
+				<a href="/visual-storytelling" class="work-category-card reverse" data-animate data-delay="1">
+					<div class="work-category-image">
+						<div class="image-placeholder"></div>
+					</div>
+					<div class="work-category-content">
+						<h3 class="work-category-title">Visual Storytelling</h3>
+						<p class="work-category-desc">Narratives built with sequence and emotion.</p>
+						<span class="work-category-arrow">Explore Projects &rarr;</span>
+					</div>
+				</a>
+				<!-- 5. Social Media Posts -->
+				<a href="/social-media-posts" class="work-category-card" data-animate data-delay="1">
+					<div class="work-category-image">
+						<div class="image-placeholder"></div>
+					</div>
+					<div class="work-category-content">
+						<h3 class="work-category-title">Social Media Posts</h3>
+						<p class="work-category-desc">Impactful creatives designed for engagement.</p>
+						<span class="work-category-arrow">Explore Projects &rarr;</span>
+					</div>
+				</a>
+				<!-- 6. Reels -->
+				<a href="/reels" class="work-category-card reverse" data-animate data-delay="1">
+					<div class="work-category-image">
+						<div class="image-placeholder"></div>
+					</div>
+					<div class="work-category-content">
+						<h3 class="work-category-title">Reels</h3>
+						<p class="work-category-desc">Dynamic short-form video content.</p>
+						<span class="work-category-arrow">Explore Projects &rarr;</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Quote Strip -->
+	<div class="quote-strip">
+		<div class="container">
+			<blockquote class="pull-quote" data-animate="scale">
+				<span class="quote-mark">&ldquo;</span>Visual design is <span class="italic-accent">always in discourse</span> — it tells a story <span class="italic-accent">before</span> a single word is ever read.<span class="quote-mark">&rdquo;</span>
+			</blockquote>
+		</div>
+	</div>
+
+	<!-- Experience -->
+	<section id="experience" class="section-frame experience-frame">
+		<div class="container exp-stacked">
+			<div class="exp-header" data-animate>
+				<span class="section-label">JOURNEY</span>
+				<h2 class="section-title">Experience <span class="italic-accent">&amp;</span><br/>education.</h2>
+				<p class="exp-intro">A timeline of roles, responsibilities, and learning that shaped who I am as a designer.</p>
+			</div>
+			<div class="timeline" id="timeline">
+				<div class="tl-progress-line" id="tlProgressLine"></div>
+				<div class="tl-item" data-animate>
+					<div class="tl-dot"></div>
+					<div class="tl-body">
+						<div class="tl-meta">
+							<span class="tag tag-mustard">CURRENTLY</span>
+							<span class="tl-date">2026 — Present</span>
+						</div>
+						<h3 class="tl-title">UI/UX &amp; Graphic Design Intern</h3>
+						<p class="tl-company">Design Studio · Mumbai</p>
+						<ul class="tl-bullets">
+							<li>Designing interface flows, mockups and brand visuals.</li>
+							<li>Crafting social media creatives and motion-friendly layouts.</li>
+							<li>Collaborating on user research, wireframes and visual systems.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tl-item" data-animate>
+					<div class="tl-dot"></div>
+					<div class="tl-body">
+						<div class="tl-meta">
+							<span class="tag tag-mustard">LEADERSHIP</span>
+							<span class="tl-date">2025 — Present</span>
+						</div>
+						<h3 class="tl-title">Class Representative (CR)</h3>
+						<p class="tl-company">SVKM's Usha Pravin Gandhi College</p>
+						<ul class="tl-bullets">
+							<li>Acted as a link between faculty and students.</li>
+							<li>Coordinated academic schedules and class activities.</li>
+							<li>Built communication and team-management skills.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tl-item" data-animate>
+					<div class="tl-dot"></div>
+					<div class="tl-body">
+						<div class="tl-meta"><span class="tag tag-mustard">PAST</span></div>
+						<h3 class="tl-title">Part-Time Teacher (Up to Class 10)</h3>
+						<p class="tl-company">Coaching Class</p>
+						<ul class="tl-bullets">
+							<li>Taught core school subjects with patience and structure.</li>
+							<li>Developed mentoring and time-management skills.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Education Cards -->
+			<div class="edu-section">
+				<h3 class="edu-heading">Education</h3>
+				<div class="edu-card" data-animate>
+					<div class="edu-info">
+						<h4>SVKM's Usha Pravin Gandhi College</h4>
+						<p>BA in Mass Communication &amp; Multimedia</p>
+					</div>
+					<span class="edu-date">2025 — Present</span>
+				</div>
+				<div class="edu-card" data-animate>
+					<div class="edu-info">
+						<h4>Bhavans College, Andheri</h4>
+						<p>Higher Secondary (HSC) — 83.33%</p>
+					</div>
+					<span class="edu-date">2023 — 2025</span>
+				</div>
+				<div class="edu-card" data-animate>
+					<div class="edu-info">
+						<h4>Matrix Academy School, CBSE</h4>
+						<p>Secondary (CBSE) — 85.60%</p>
+					</div>
+					<span class="edu-date">Until 2023</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Skills & Tools -->
+	<section id="skills" class="section-frame skills-frame">
+		<div class="container skills-section">
+			<div class="skills-header" data-animate>
+				<span class="section-label">TOOLKIT</span>
+				<h2 class="section-title">Skills <span class="italic-accent">&amp;</span> tools.</h2>
+			</div>
+			<div class="skills-grid">
+				<div class="skill-group-card" data-animate data-delay="1">
+					<h4>DESIGN TOOLS</h4>
+					<ul>
+						<li>Adobe Photoshop</li>
+						<li>Adobe Illustrator</li>
+						<li>Canva</li>
+						<li>Figma (learning)</li>
+					</ul>
+				</div>
+				<div class="skill-group-card" data-animate data-delay="2">
+					<h4>CREATIVE SKILLS</h4>
+					<ul>
+						<li>Graphic Design</li>
+						<li>Visual Storytelling</li>
+						<li>Social Media Content</li>
+						<li>Basic Video Editing</li>
+					</ul>
+				</div>
+				<div class="skill-group-card" data-animate data-delay="3">
+					<h4>DIGITAL &amp; UI</h4>
+					<ul>
+						<li>UI / Web Layout</li>
+						<li>Wireframing</li>
+						<li>Microsoft Office</li>
+						<li>Microsoft Excel</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="section-frame contact-frame">
+		<div class="contact-inner">
+			<div class="contact-info" data-animate="left">
+				<span class="contact-label">CONTACT</span>
+				<h2 class="contact-heading">Let's make<br/>something<br/>beautiful.</h2>
+				<p class="contact-subtext">Have a brief, an idea, or just want to say hi? I'd love to hear from you.</p>
+				<ul class="contact-methods">
+					<li>
+						<div class="contact-icon">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+						</div>
+						riyamishra2921@gmail.com
+					</li>
+					<li>
+						<div class="contact-icon">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+						</div>
+						+91 9356597731
+					</li>
+					<li>
+						<div class="contact-icon">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+						</div>
+						Mumbai, Maharashtra
+					</li>
+					<li>
+						<div class="contact-icon">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+						</div>
+						@cramp_camp
+					</li>
+				</ul>
+			</div>
+			<div class="contact-form-wrapper" data-animate="right" data-delay="2">
+				<form class="contact-form" id="contactForm" action="https://formsubmit.co/riyamishra2921@gmail.com" method="POST">
+					<input type="hidden" name="_subject" value="New submission from Portfolio">
+					<input type="hidden" name="_captcha" value="false">
+					<div class="cf-row">
+						<div class="cf-group">
+							<label for="cf-name">NAME</label>
+							<input type="text" id="cf-name" name="name" required autocomplete="off">
+						</div>
+						<div class="cf-group">
+							<label for="cf-email">EMAIL</label>
+							<input type="email" id="cf-email" name="email" required autocomplete="off" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+						</div>
+					</div>
+					<div class="cf-group">
+						<label for="cf-subject">SUBJECT</label>
+						<input type="text" id="cf-subject" name="subject" required autocomplete="off">
+					</div>
+					<div class="cf-group">
+						<label for="cf-message">MESSAGE</label>
+						<textarea id="cf-message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+					</div>
+					<button type="submit" class="cf-submit">
+						Send Message
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container footer-content">
+			<p>&copy; 2024-2026 Riya Mishra. All rights reserved.</p>
+			<a href="#" class="back-to-top">Back to top &uarr;</a>
+		</div>
+	</footer>
 </Layout>
+
+<script>
+	// Bidirectional scroll-triggered animations for ALL elements
+	const animItems = document.querySelectorAll('[data-animate]:not(.tl-item)');
+	const trigger = () => window.innerHeight * 0.85;
+
+	const navbar = document.getElementById('navbar');
+	const scrollIndicator = document.getElementById('scrollIndicator');
+	const timeline = document.getElementById('timeline');
+	const progressLine = document.getElementById('tlProgressLine');
+	const tlDots = document.querySelectorAll('.tl-dot');
+	const tlItems = document.querySelectorAll('.tl-item');
+
+	// Smooth scroll back to top
+	document.querySelector('.back-to-top')?.addEventListener('click', (e) => {
+		e.preventDefault();
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
+
+	// Filter tags
+	document.querySelectorAll('.filter-tag').forEach(tag => {
+		tag.addEventListener('click', () => {
+			document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+			tag.classList.add('active');
+		});
+	});
+
+	// Unified scroll handler (rAF-throttled)
+	let ticking = false;
+	function onFrame() {
+		// Navbar and scroll indicator
+		navbar?.classList.toggle('scrolled', window.scrollY > 20);
+		if (scrollIndicator) {
+			scrollIndicator.classList.toggle('hidden', window.scrollY > 50);
+		}
+
+		const animTrigger = trigger();
+
+		// All animated elements — bidirectional
+		animItems.forEach(el => {
+			const rect = el.getBoundingClientRect();
+			const isVisible = rect.top < animTrigger && rect.bottom > 0;
+			el.classList.toggle('visible', isVisible);
+		});
+
+		// Timeline scroll-tracking
+		if (timeline && progressLine) {
+			const rect = timeline.getBoundingClientRect();
+			const tlTrigger = window.innerHeight * 0.65;
+			const progress = Math.max(0, Math.min(1, (tlTrigger - rect.top) / rect.height));
+
+			progressLine.style.height = (progress * rect.height) + 'px';
+
+			// Dots — toggle in/out
+			tlDots.forEach(dot => {
+				const rect = dot.getBoundingClientRect();
+				const dotY = rect.top + 6;
+				dot.classList.toggle('dot-visible', dotY < tlTrigger && rect.bottom > 0);
+			});
+
+			// Items — toggle in/out
+			tlItems.forEach(item => {
+				const rect = item.getBoundingClientRect();
+				item.classList.toggle('visible', rect.top < tlTrigger && rect.bottom > 0);
+			});
+		}
+		ticking = false;
+	}
+
+	window.addEventListener('scroll', () => {
+		if (!ticking) { requestAnimationFrame(onFrame); ticking = true; }
+	}, { passive: true });
+
+	onFrame();
+
+	// AJAX Form Submission to prevent redirect
+	const contactForm = document.getElementById('contactForm') as HTMLFormElement;
+	if (contactForm) {
+		contactForm.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			// Custom Email Validation for Genuine Emails
+			const emailInput = document.getElementById('cf-email') as HTMLInputElement;
+			const emailValue = emailInput.value.toLowerCase();
+			const invalidDomains = ['test.com', 'example.com', 'mailinator.com', 'fake.com', '123.com', '1234.com', 'abc.com', 'xyz.com'];
+			const domain = emailValue.split('@')[1];
+			
+			if (invalidDomains.includes(domain)) {
+				alert('Please enter a genuine, active email address so I can reply back to you!');
+				emailInput.focus();
+				return; // Stop submission
+			}
+
+			const btn = contactForm.querySelector('.cf-submit') as HTMLButtonElement;
+			const originalText = btn.innerHTML;
+			btn.innerHTML = 'Sending...';
+			btn.disabled = true;
+
+			try {
+				const formData = new FormData(contactForm);
+				const response = await fetch(contactForm.action, {
+					method: 'POST',
+					body: formData,
+					headers: {
+						'Accept': 'application/json'
+					}
+				});
+
+				if (response.ok) {
+					alert('Thank you! Your message has been sent.');
+					contactForm.reset();
+				} else {
+					alert('Oops! There was a problem submitting your form.');
+				}
+			} catch (error) {
+				alert('Oops! There was a problem submitting your form.');
+			} finally {
+				btn.innerHTML = originalText;
+				btn.disabled = false;
+			}
+		});
+	}
+</script>

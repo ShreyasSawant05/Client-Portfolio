@@ -2,22 +2,245 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content="Riya Mishra — UI/UX & Graphic Design Portfolio. A Mass Communication & Multimedia undergrad from Mumbai blending visual design, social media, and storytelling." />
+		<title>Creative Portfolio | Riya Mishra</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	:root {
+		/* Core Colors */
+		--bg-warm-ivory: #F7F2EA;
+		--text-deep-plum: #4A2540;
+		--accent-mustard: #D9A441;
+		--accent-terracotta: #C8755A;
+
+		/* Supporting Tones */
+		--bg-card: #FBF7F0;
+		--bg-sand: #EADFCF;
+		--bg-muted: #EDE6D9;
+		--text-muted: #7A6470;
+		--border-color: #DDD2C2;
+		
+		--font-serif: 'Playfair Display', serif;
+		--font-sans: 'Inter', sans-serif;
+
+		/* Section sizing */
+		--section-width: 1920px;
+		--section-height: 980px;
+	}
+
+	* {
+		box-sizing: border-box;
 		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	html, body {
+		width: 100%;
+		min-height: 100%;
+		background-color: var(--bg-warm-ivory);
+		color: var(--text-deep-plum);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		line-height: 1.6;
+		overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-serif);
+		font-weight: 500;
+		color: var(--text-deep-plum);
+		line-height: 1.2;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	button {
+		font-family: var(--font-sans);
+		cursor: pointer;
+		border: none;
+		outline: none;
+	}
+
+	img {
+		max-width: 100%;
+		display: block;
+	}
+
+	/* Container — centres content within the 1920 sections */
+	.container {
+		max-width: 1320px;
+		margin: 0 auto;
+		padding: 0 60px;
+	}
+
+	/* Standard section wrapper */
+	.section-frame {
+		width: 100%;
+		max-width: var(--section-width);
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding: 80px 0;
+	}
+
+	/* Utility button */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		background-color: var(--text-deep-plum);
+		color: var(--bg-warm-ivory);
+		padding: 14px 32px;
+		border-radius: 30px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-align: center;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		border: none;
+		font-family: var(--font-sans);
+	}
+
+	.btn:hover {
+		opacity: 0.88;
+		transform: translateY(-2px);
+	}
+
+	/* Image placeholder */
+	.image-placeholder {
+		background-color: var(--bg-muted);
+		border-radius: 16px;
 		width: 100%;
 		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-muted);
+		font-size: 0.85rem;
+		border: 1px dashed var(--border-color);
+		letter-spacing: 1px;
+	}
+
+	/* Section label */
+	.section-label {
+		display: inline-block;
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		color: var(--accent-mustard);
+		margin-bottom: 16px;
+		font-weight: 600;
+	}
+
+	/* Section title */
+	.section-title {
+		font-family: var(--font-serif);
+		font-size: 3.24rem;
+		margin-bottom: 28px;
+		color: var(--text-deep-plum);
+		font-weight: 400;
+		line-height: 1.12;
+	}
+
+	/* Italic ampersand accent */
+	.italic-accent {
+		font-style: italic;
+		font-family: var(--font-serif);
+		color: var(--accent-terracotta);
+	}
+
+	/* Body text */
+	.body-text {
+		margin-bottom: 22px;
+		font-size: 1.05rem;
+		color: var(--text-muted);
+		line-height: 1.75;
+	}
+
+	/* Selection */
+	::selection {
+		background: var(--accent-mustard);
+		color: var(--text-deep-plum);
+	}
+
+	/* Scrollbar */
+	::-webkit-scrollbar { width: 8px; }
+	::-webkit-scrollbar-track { background: var(--bg-warm-ivory); }
+	::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+	::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+	/* Responsive fallbacks */
+	@media (max-width: 1400px) {
+		.container { max-width: 1100px; padding: 0 40px; }
+	}
+	@media (max-width: 768px) {
+		.container { padding: 0 20px; }
+		.section-frame { min-height: auto; padding: 60px 0; }
+	}
+	/* Scroll-triggered fade-in animations */
+	[data-animate] {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.6s ease, transform 0.6s ease;
+	}
+	[data-animate].visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	[data-animate][data-delay="1"] { transition-delay: 0.1s; }
+	[data-animate][data-delay="2"] { transition-delay: 0.2s; }
+	[data-animate][data-delay="3"] { transition-delay: 0.3s; }
+	[data-animate][data-delay="4"] { transition-delay: 0.4s; }
+	[data-animate][data-delay="5"] { transition-delay: 0.5s; }
+
+	/* Slide from left variant */
+	[data-animate="left"] {
+		transform: translateX(-30px);
+	}
+	[data-animate="left"].visible {
+		transform: translateX(0);
+	}
+
+	/* Slide from right variant */
+	[data-animate="right"] {
+		transform: translateX(30px);
+	}
+	[data-animate="right"].visible {
+		transform: translateX(0);
+	}
+
+	/* Scale-up variant */
+	[data-animate="scale"] {
+		transform: scale(0.95);
+	}
+	[data-animate="scale"].visible {
+		transform: scale(1);
 	}
 </style>
