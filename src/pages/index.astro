@@ -699,6 +699,11 @@ import "../styles/sections.css";
       <a href="#" class="back-to-top">Back to top &uarr;</a>
     </div>
   </footer>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast-notification">
+    <span id="toastMessage"></span>
+  </div>
 </Layout>
 
 <script>
@@ -793,6 +798,25 @@ import "../styles/sections.css";
 
   onFrame();
 
+  // Custom Toast Notification Logic
+  function showToast(message, isError = false) {
+    const toast = document.getElementById("toastNotification");
+    const msgEl = document.getElementById("toastMessage");
+    if (!toast || !msgEl) return;
+    
+    msgEl.innerText = message;
+    if (isError) {
+      toast.classList.add("toast-error");
+    } else {
+      toast.classList.remove("toast-error");
+    }
+    
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 4000);
+  }
+
   // AJAX Form Submission to prevent redirect
   const contactForm = document.getElementById("contactForm") as HTMLFormElement;
   if (contactForm) {
@@ -817,8 +841,9 @@ import "../styles/sections.css";
       const domain = emailValue.split("@")[1];
 
       if (invalidDomains.includes(domain)) {
-        alert(
+        showToast(
           "Please enter a genuine, active email address so I can reply back to you!",
+          true
         );
         emailInput.focus();
         return; // Stop submission
@@ -840,13 +865,13 @@ import "../styles/sections.css";
         });
 
         if (response.ok) {
-          alert("Thank you! Your message has been sent.");
+          showToast("Thank you! Your message has been sent successfully.");
           contactForm.reset();
         } else {
-          alert("Oops! There was a problem submitting your form.");
+          showToast("Oops! There was a problem submitting your form.", true);
         }
       } catch (error) {
-        alert("Oops! There was a problem submitting your form.");
+        showToast("Oops! There was a problem submitting your form.", true);
       } finally {
         btn.innerHTML = originalText;
         btn.disabled = false;
