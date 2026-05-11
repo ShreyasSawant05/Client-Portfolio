@@ -29,6 +29,12 @@
 	gap: 12px;
 	color: var(--text-deep-plum);
 }
+.logo-image {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	object-fit: cover;
+}
 .logo-badge {
 	display: flex;
 	align-items: center;

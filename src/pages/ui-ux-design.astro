@@ -8,7 +8,7 @@ import '../styles/sections.css';
 	<nav class="navbar" id="navbar" style="background: rgba(247, 242, 234, 0.9); backdrop-filter: blur(10px);">
 		<div class="nav-container container">
 			<a href="/" class="logo" style="text-decoration: none;">
-				<span class="logo-badge">R</span>
+				<img src="/logo.png" alt="Riya Mishra Logo" class="logo-image" />
 				<span class="logo-text">Riya Mishra</span>
 			</a>
 			<ul class="nav-links">
@@ -36,7 +36,7 @@ import '../styles/sections.css';
 			<!-- Projects Grid -->
 			<div class="project-grid">
 				<!-- Project 1 -->
-				<a href="/sample-ui-ux.pdf" target="_blank" class="project-card" data-animate>
+				<a href="/ui-project-1.pdf" target="_blank" class="project-card" data-animate>
 					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
 						<span style="color: var(--text-muted);">Project Image 1</span>
 					</div>
@@ -45,7 +45,7 @@ import '../styles/sections.css';
 				</a>
 
 				<!-- Project 2 -->
-				<a href="/sample-ui-ux.pdf" target="_blank" class="project-card" data-animate data-delay="1">
+				<a href="/ui-project-2.pdf" target="_blank" class="project-card" data-animate data-delay="1">
 					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
 						<span style="color: var(--text-muted);">Project Image 2</span>
 					</div>
@@ -54,11 +54,29 @@ import '../styles/sections.css';
 				</a>
 
 				<!-- Project 3 -->
-				<a href="/sample-ui-ux.pdf" target="_blank" class="project-card" data-animate data-delay="2">
+				<a href="/ui-project-3.pdf" target="_blank" class="project-card" data-animate data-delay="2">
 					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
 						<span style="color: var(--text-muted);">Project Image 3</span>
 					</div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 3</h3>
+					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
+				</a>
+
+				<!-- Project 4 -->
+				<a href="/ui-project-4.pdf" target="_blank" class="project-card" data-animate>
+					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
+						<span style="color: var(--text-muted);">Project Image 4</span>
+					</div>
+					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 4</h3>
+					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
+				</a>
+
+				<!-- Project 5 -->
+				<a href="/ui-project-5.pdf" target="_blank" class="project-card" data-animate data-delay="1">
+					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
+						<span style="color: var(--text-muted);">Project Image 5</span>
+					</div>
+					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 5</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
 				</a>
 			</div>
@@ -67,12 +85,15 @@ import '../styles/sections.css';
 
 <style>
 	.project-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: 40px;
 		width: 100%;
 	}
 	.project-card {
+		flex: 0 0 calc(33.333% - 27px);
+		max-width: calc(33.333% - 27px);
 		display: block;
 		background: var(--bg-card);
 		border-radius: 20px;
@@ -87,13 +108,15 @@ import '../styles/sections.css';
 		box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 	}
 	@media (max-width: 992px) {
-		.project-grid {
-			grid-template-columns: repeat(2, 1fr);
+		.project-card {
+			flex: 0 0 calc(50% - 20px);
+			max-width: calc(50% - 20px);
 		}
 	}
 	@media (max-width: 768px) {
-		.project-grid {
-			grid-template-columns: 1fr;
+		.project-card {
+			flex: 0 0 100%;
+			max-width: 100%;
 		}
 	}
 </style>
