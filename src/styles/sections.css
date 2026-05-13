@@ -932,8 +932,59 @@
 	.skills-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
-	.nav-links { display: none; }
-	.mobile-menu-btn { display: flex; }
+	/* Mobile Menu Overlay System */
+	.mobile-menu-btn { display: flex; position: relative; z-index: 1000; }
+	
+	.nav-links {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(247, 242, 234, 0.4);
+		backdrop-filter: blur(24px);
+		-webkit-backdrop-filter: blur(24px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 32px;
+		z-index: 999;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-20px);
+		transition: all 0.4s ease;
+	}
+	
+	body.menu-open .nav-links {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+	
+	body.menu-open .navbar {
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
+		background-color: transparent;
+		box-shadow: none;
+		border-bottom: transparent;
+	}
+	
+	body.menu-open {
+		overflow: hidden;
+	}
+	
+	.nav-links a {
+		font-family: var(--font-heading);
+		font-size: 2.8rem;
+		color: var(--text-deep-plum);
+	}
+	.nav-links a::after { display: none; }
+	
+	/* Hamburger to X animation */
+	body.menu-open .mobile-menu-btn span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+	body.menu-open .mobile-menu-btn span:nth-child(2) { opacity: 0; }
+	body.menu-open .mobile-menu-btn span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 	.hero-title { font-size: 3.2rem; }
 	.section-title { font-size: 2.4rem; }
 	.contact-heading { font-size: 2.8rem; }
@@ -956,4 +1007,53 @@
 	.about-grid { min-height: auto; }
 	.gallery-strip { padding: 0 20px; }
 	.edu-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+	/* Reduce space above hero */
+	.hero-frame { min-height: auto; padding-top: 100px; padding-bottom: 20px; }
+	
+	.hero-image-container, .about-image-container { height: 280px; }
+	.hero-title { font-size: 2.4rem; }
+	.section-title { font-size: 2rem; }
+	.contact-heading { font-size: 1.8rem; }
+	
+	/* About grid 2x2 */
+	.about-info-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+	.info-value { font-size: 1rem; }
+	.info-label { font-size: 0.6rem; }
+	
+	/* Showcase projects 2x3 format (2 columns) */
+	.work-categories-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+	.work-category-card, .work-category-card.reverse { flex-direction: column; min-height: 180px; }
+	.work-category-image { min-height: 120px; }
+	.work-category-content { padding: 14px; }
+	.work-category-title { font-size: 1.3rem; margin-bottom: 6px; }
+	.work-category-desc { font-size: 0.85rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
+	.work-category-arrow { font-size: 0.8rem; margin-top: 12px; }
+	
+	/* Skills 3 columns inline (no scroll) */
+	.skills-grid { 
+		display: grid; 
+		grid-template-columns: repeat(3, 1fr); 
+		gap: 8px; 
+	}
+	.skill-group-card { 
+		min-width: auto; 
+		padding: 16px 8px;
+		text-align: center;
+	}
+	.skill-group-card h4 { font-size: 0.55rem; letter-spacing: 1px; margin-bottom: 10px; }
+	.skill-group-card ul li { font-size: 0.65rem; padding: 6px 0; }
+
+	
+	/* Contact form smaller */
+	.contact-form-wrapper { padding: 20px 16px; margin-left: 0; }
+	.cf-row { grid-template-columns: 1fr; }
+	.cf-group input, .cf-group textarea { padding: 8px 10px; font-size: 0.85rem; }
+	
+	.pull-quote { font-size: 1.2rem; }
+	.quote-mark { font-size: 2rem; }
+	.edu-card { padding: 16px 20px; }
+	.hero, .about-grid { gap: 30px; }
 }

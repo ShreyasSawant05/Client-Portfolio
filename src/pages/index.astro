@@ -718,6 +718,20 @@ import "../styles/sections.css";
   const tlDots = document.querySelectorAll(".tl-dot");
   const tlItems = document.querySelectorAll(".tl-item");
 
+  // Mobile Menu Logic
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const navLinksItems = document.querySelectorAll(".nav-links a");
+
+  mobileMenuBtn?.addEventListener("click", () => {
+    document.body.classList.toggle("menu-open");
+  });
+
+  navLinksItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      document.body.classList.remove("menu-open");
+    });
+  });
+
   // Smooth scroll back to top
   document.querySelector(".back-to-top")?.addEventListener("click", (e) => {
     e.preventDefault();
@@ -799,7 +813,7 @@ import "../styles/sections.css";
   onFrame();
 
   // Custom Toast Notification Logic
-  function showToast(message, isError = false) {
+  function showToast(message: string, isError = false) {
     const toast = document.getElementById("toastNotification");
     const msgEl = document.getElementById("toastMessage");
     if (!toast || !msgEl) return;
