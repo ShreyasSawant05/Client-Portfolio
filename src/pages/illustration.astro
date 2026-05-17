@@ -37,8 +37,11 @@ import '../styles/sections.css';
 			<div class="project-grid">
 				<!-- Project 1 -->
 				<a href="#" class="project-card" data-animate>
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 1</span>
+					<div class="image-maximize-container">
+						<img src="/cover_illustration.png" alt="Illustration Project 1" />
+						<div class="maximize-overlay">
+							<svg class="maximize-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+						</div>
 					</div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">Illustration Project 1</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Short description of this project.</p>
@@ -46,8 +49,11 @@ import '../styles/sections.css';
 
 				<!-- Project 2 -->
 				<a href="#" class="project-card" data-animate data-delay="1">
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 2</span>
+					<div class="image-maximize-container">
+						<img src="/cover_illustration.png" alt="Illustration Project 2" />
+						<div class="maximize-overlay">
+							<svg class="maximize-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+						</div>
 					</div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">Illustration Project 2</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Short description of this project.</p>
@@ -55,8 +61,11 @@ import '../styles/sections.css';
 
 				<!-- Project 3 -->
 				<a href="#" class="project-card" data-animate data-delay="2">
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 3</span>
+					<div class="image-maximize-container">
+						<img src="/cover_illustration.png" alt="Illustration Project 3" />
+						<div class="maximize-overlay">
+							<svg class="maximize-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+						</div>
 					</div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">Illustration Project 3</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Short description of this project.</p>
@@ -116,4 +125,27 @@ import '../styles/sections.css';
 	window.addEventListener('scroll', () => {
 		navbar?.classList.toggle('scrolled', window.scrollY > 20);
 	}, { passive: true });
+
+	// Lightbox logic
+	document.querySelectorAll('.maximize-overlay').forEach(overlay => {
+		overlay.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			const img = overlay.previousElementSibling as HTMLImageElement;
+			if (!img) return;
+			
+			const modal = document.createElement('div');
+			modal.className = 'lightbox-modal';
+			modal.innerHTML = `
+				<div class="lightbox-close">&times;</div>
+				<img src="${img.src}" class="lightbox-img" alt="Fullscreen View" />
+			`;
+			document.body.appendChild(modal);
+			
+			// Close on click
+			modal.addEventListener('click', () => {
+				modal.remove();
+			});
+		});
+	});
 </script>

@@ -37,45 +37,35 @@ import '../styles/sections.css';
 			<div class="project-grid">
 				<!-- Project 1 -->
 				<a href="/ui-project-1.pdf" target="_blank" class="project-card" data-animate>
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 1</span>
-					</div>
+					<div class="scroll-preview" style="background-image: url('/ui_long_mockup.png');"></div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 1</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
 				</a>
 
 				<!-- Project 2 -->
 				<a href="/ui-project-2.pdf" target="_blank" class="project-card" data-animate data-delay="1">
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 2</span>
-					</div>
+					<div class="scroll-preview" style="background-image: url('/ui_long_mockup.png');"></div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 2</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
 				</a>
 
 				<!-- Project 3 -->
 				<a href="/ui-project-3.pdf" target="_blank" class="project-card" data-animate data-delay="2">
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 3</span>
-					</div>
+					<div class="scroll-preview" style="background-image: url('/ui_long_mockup.png');"></div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 3</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
 				</a>
 
 				<!-- Project 4 -->
 				<a href="/ui-project-4.pdf" target="_blank" class="project-card" data-animate>
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 4</span>
-					</div>
+					<div class="scroll-preview" style="background-image: url('/ui_long_mockup.png');"></div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 4</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
 				</a>
 
 				<!-- Project 5 -->
 				<a href="/ui-project-5.pdf" target="_blank" class="project-card" data-animate data-delay="1">
-					<div class="image-placeholder" style="height: 300px; border-radius: 12px; margin-bottom: 24px; overflow: hidden; background: var(--bg-muted);">
-						<span style="color: var(--text-muted);">Project Image 5</span>
-					</div>
+					<div class="scroll-preview" style="background-image: url('/ui_long_mockup.png');"></div>
 					<h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--text-deep-plum);">UI/UX Project 5</h3>
 					<p class="body-text" style="font-size: 0.95rem; margin-bottom: 0;">Click here to open the PDF presentation for this project.</p>
 				</a>
@@ -106,6 +96,18 @@ import '../styles/sections.css';
 	.project-card:hover {
 		transform: translateY(-5px);
 		box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+	}
+	.scroll-preview {
+		height: 300px;
+		border-radius: 12px;
+		margin-bottom: 24px;
+		background-size: 100% auto;
+		background-position: top;
+		transition: background-position 3s ease-in-out;
+		background-color: var(--bg-muted);
+	}
+	.project-card:hover .scroll-preview {
+		background-position: bottom;
 	}
 	@media (max-width: 992px) {
 		.project-card {
